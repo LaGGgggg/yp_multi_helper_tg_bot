@@ -3,11 +3,13 @@ name: automatic server update
 on: [push]
 
 jobs:
+
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
-      - uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
